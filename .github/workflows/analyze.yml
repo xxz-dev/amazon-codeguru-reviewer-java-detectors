@@ -98,7 +98,7 @@ jobs:
           codeguru-results.sarif.json | sort >> summary-of-results.csv
 
     - name: Upload results summary to workflow artifacts
-      if: && steps.analysis.outcome == 'success'
+      if: steps.analysis.outcome == 'success'
       uses: actions/upload-artifact@v2
       with:
         name: summary-of-results.csv
